@@ -1,0 +1,19 @@
+/* Descriptive analysis for Customer*/
+select * from Customer;
+
+/* Count of policies by region */
+select region, count(*) as Policy_count from Customer Group By Region;
+
+/* Distribution of income levels */
+select Income_Level, COUNT(*) AS Count fROM Customer GROUP BY Income_Level;
+
+/*Average age by marital status */
+select Marital_status, Avg(age) as Average_age from Customer Group By Marital_Status;
+
+/*Descriptive  analysis for Policy table */
+select * from Policy;
+
+/* Count number of policies by type */
+ select Policy_Type, count(*)as Policy_count from Policy Group By Policy_Type;
+
+ 
