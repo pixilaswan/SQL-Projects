@@ -53,6 +53,12 @@ from Customer c
 join Policy p on c.Policy_ID = p.Policy_ID
 join Vehicle v on p.Policy_ID = v.Policy_ID;
 
+/* Policies with the high claims amounts and customer satisfaction */
+
+Select v.claim_amount, e.customer_satisfaction_score from Vehicle v
+JOIN Engagement e on v.Policy_ID = e.Policy_ID
+where v.Claim_Amount > 5000 AND e.Customer_Satisfaction_Score >8;
+
 
 
 
