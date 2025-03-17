@@ -59,6 +59,16 @@ Select v.claim_amount, e.customer_satisfaction_score from Vehicle v
 JOIN Engagement e on v.Policy_ID = e.Policy_ID
 where v.Claim_Amount > 5000 AND e.Customer_Satisfaction_Score >8;
 
+/* Policies with renewal status and customer satisfaction */
+Select p.Renewal_Status, e.Customer_Satisfaction_Score
+from Policy p
+JOIN Engagement e on p.Policy_ID = e.Policy_ID;
+
+/* Average premium by region */
+Select c.Region, AVG(p.Premium) AS Average_Premium
+from Customer c
+join Policy p on c.Policy_ID = p.Policy_ID
+group by c.Region;
 
 
 
